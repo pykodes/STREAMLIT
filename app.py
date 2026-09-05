@@ -38,7 +38,7 @@ with tab1:
 
 with tab2:
     st.header("WORD --> PDF")
-    docx_file = st.file_uploader("Add your file here",type = ['docx'],key = ['word_to_pdf'])
+    docx_file = st.file_uploader("Add your file here",type = ['docx'], key = "word_to_pdf")
     if docx_file:
         if st.button("convert"):
             with st.spinner("working on it......."):
@@ -49,7 +49,7 @@ with tab2:
                     pdf_path = docx_path.replace(".docx",".pdf")
 
                     doc = Document(docx_path)
-                    c = canvas.canvas(pdf_path)
+                    c = canvas.Canvas(pdf_path)
                     y = 800
                     for p in doc.paragraphs:
                         text = p.text
